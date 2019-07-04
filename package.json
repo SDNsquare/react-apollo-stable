@@ -4,11 +4,7 @@
   "author": "opensource@apollographql.com",
   "private": true,
   "description": "React data container for Apollo Client",
-  "keywords": [
-    "apollo",
-    "graphql",
-    "react"
-  ],
+  "keywords": [ "apollo", "graphql", "react" ],
   "license": "MIT",
   "main": "lib/react-apollo.cjs.js",
   "module": "lib/react-apollo.esm.js",
@@ -22,6 +18,7 @@
   },
   "scripts": {
     "compile": "tsc -p ./tsconfig.cjs.json",
+    "build": "npm run compile",
     "danger": "danger run --verbose",
     "deploy": "cd lib && npm publish",
     "filesize": "bundlesize",
@@ -45,9 +42,7 @@
     "watch": "tsc-watch --onSuccess \"npm run postcompile\""
   },
   "babel": {
-    "presets": [
-      "env"
-    ]
+    "presets": [ "env" ]
   },
   "bundlesize": [
     {
@@ -56,17 +51,11 @@
     }
   ],
   "renovate": {
-    "extends": [
-      "config:base",
-      "schedule:nonOfficeHours",
-      ":pinOnlyDevDependencies"
-    ],
+    "extends": [ "config:base", "schedule:nonOfficeHours", ":pinOnlyDevDependencies" ],
     "semanticCommits": true,
     "timezone": "America/New_York",
     "automerge": false,
-    "labels": [
-      "dependencies"
-    ]
+    "labels": [ "dependencies" ]
   },
   "jest": {
     "testEnvironment": "jsdom",
@@ -74,24 +63,15 @@
       "^.+\\.tsx?$": "ts-jest",
       "^.+\\.jsx?$": "babel-jest"
     },
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json"
-    ],
+    "moduleFileExtensions": [ "ts", "tsx", "js", "json" ],
     "modulePathIgnorePatterns": [
       "<rootDir>/examples",
       "<rootDir>/test/typescript-usage.tsx",
       "<rootDir>/test/fail-no-entry-point.js"
     ],
-    "projects": [
-      "<rootDir>"
-    ],
+    "projects": [ "<rootDir>" ],
     "testRegex": "(/test/(?!test-utils\b)\b.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "setupFiles": [
-      "<rootDir>/test/test-utils/setup.ts"
-    ]
+    "setupFiles": [ "<rootDir>/test/test-utils/setup.ts" ]
   },
   "prettier": {
     "printWidth": 100,
